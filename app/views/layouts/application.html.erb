@@ -2,15 +2,16 @@
 <html>
   <head>
     <title>Chatty</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-      <div class="ui teal three item inverted menu">
+      <div class="ui small inverted menu">
       <div class="ui container">
       <a class="active item">
         Home
@@ -34,6 +35,7 @@
       </div>
     </div>
     <div class="ui container">
+    <%= render 'layouts/navigation' %>
       <%= yield %>
     </div>
   </body>
