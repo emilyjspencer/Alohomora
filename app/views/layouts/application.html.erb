@@ -13,39 +13,11 @@
   <body>
       <div class="ui small inverted menu">
       <div class="ui container">
-      <a class="active item">
-        Home
-      </a>
-      <a class="item">
-        Messages
-      </a>
-      <div class="ui stackable inverted menu">
-    <a class="item">Log In</a>
-    <a class="item">Log Out</a>
-    <a class="item">Sign Up</a>
-    <a class="item">Common Room</a>
-    <div class="right menu">
-        <div class="ui icon input">
-            <input type="text" placeholder="wingardium leviosa..">
-            <i class="search link icon"></i>
-        </div>
+    <%= render 'layouts/navigation' %>
     </div>
-    <div class="item">
-        <div class="ui blue button">Something</div>
-        </div>
-    </div>
-</div> 
-        <% if !logged_in? %>
-          <div class="item">
-            <%= link_to "Log in", login_path, class: "ui info button" %> 
-          </div>
-        <% end %>
-        </div>
-        </div>
-      </div>
     </div>
     <div class="ui container">
-    <%= render 'layouts/navigation' %>
+    <&= render 'layouts/messages'>
       <%= yield %>
     </div>
   </body>

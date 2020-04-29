@@ -5,16 +5,18 @@
       </a>
    
       <div class="ui stackable inverted menu">
+      <div class="menu">
       <% if logged_in? %>
         <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
       <% else %>
         <%= link_to "Login", login_path, class: "item" %>
       <% end %>
       </div>
+      </div>
     
     <% if !logged_in? %>
       <%= link_to "Log in", login_path, class: "ui info button" %>
-        <div class="ui info button">Sign Up</div>
+       
     </div>
     <% end %>
     </div>
