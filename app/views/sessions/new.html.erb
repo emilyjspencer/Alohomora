@@ -1,28 +1,34 @@
-<h1>Sign in</h1>
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login/Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+<h3>Alohomora......unlock the conversation</h3>
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <div class="ui form">
+    <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) do |f| %>
         <div class="field">
-          <label>Username</label>
+          <%= f.label :username, "Username" %>
           <div class="ui left icon input">
-            <input type="text" placeholder="Username">
+            <%= f.text_field :username, placeholder:"Username" %>
             <i class="user icon"></i>
           </div>
         </div>
         <div class="field">
-          <label>Password</label>
+          <%= f.label :password, "Password" %>
           <div class="ui left icon input">
-            <input type="password">
+            <%= f.password_field :password, placehoder: "Password" %>
             <i class="lock icon"></i>
           </div>
         </div>
-        <div class="ui blue submit button">Login</div>
-      </div>
+        <%= f.button "Login", class: "ui gray submut orange" %>
+      <% end %>
     </div>
     <div class="middle aligned column">
-      <div class="ui big button">
+      <div class="ui big grey button">
         <i class="signup icon"></i>
         Sign Up
       </div>
@@ -32,3 +38,5 @@
     Or
   </div>
 </div>
+</body>
+</html>
