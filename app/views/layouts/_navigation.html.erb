@@ -1,18 +1,24 @@
-<a class="item">
-        Messages
+
+   <%= link_to "Chatty", root_path, class: "item" %>
+     <a class="item">
+        Potterhead Messages
       </a>
-      <%= link_to "Chatty", root_path, class: "item" %>
-      <div class="right menu">
-        <div class="ui dropdown item">
-          Account <i class="dropdown icon"></i>
-          <div class="menu">
-            <a class="item">Login</a>
-            <a class="item">Log Out</a>
-            <a class="item">Sign Up</a>
-          </div>
-        </div>
-        <div class="item">
-            <div class="ui info button">Sign Up</div>
-        </div>
-        </div>
+   
+      <div class="ui stackable inverted menu">
+      <% if logged_in? %>
+        <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "item" %>
+      <% end %>
+      </div>
+    
+    <% if !logged_in? %>
+      <%= link_to "Log in", login_path, class: "ui info button" %>
+        <div class="ui info button">Sign Up</div>
+    </div>
+    <% end %>
+    </div>
+     
+
+      
   
