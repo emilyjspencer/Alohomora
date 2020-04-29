@@ -1,38 +1,59 @@
-<h3 class="ui center aligned medium icon header">
-<i class="inverted grey users icon"></i>
-  Hi there!!!
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  </head>
+<body>
+<h3>
+  Alohomora......unlock the conversation!
 </h3>
+<i class="fa fa-hat-wizard"></i>
+<h3 class="ui center aligned medium icon header"></h3>
+<div class="ui segment">
+<img class="ui small image" src="/images/keyhogwarts.png">
+</div>
+<div class="dumbledore">
+<img src="/keyhogwarts.png">
+</div>
+
+<img class="ui avatar image" src="/images/keyhogwarts.png">
+<div class="ui small images">
+</div>
+
+
+
+
 
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
       <div class="content">
     <div class="ui feed">
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <em>Elliot Fu</em>: How are you all doing?
-      </div>
-    </div>
-  </div> 
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <em>Stevie Feliciano</em>: Im good. Drinking too much though...
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <em>Helen Troy</em>: Haha. Same Stevie
+       <% @messages.each do |message| %>
+        <div class="event">
+          <div class="content">
+            <div class="summary">
+              <%= message.user.username %></em>: <%= message.description %>
+            </div>  
+     <div class="event">
+      <div class="content">
+       <div class="summary">  
       </div>
     </div>
   </div>
   <div class="event">
     <div class="content">
       <div class="summary">
-         <em>Christian Rocha</em>: Well Im on a health kick so its all good :)
+         
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="content">
+      <div class="summary">
+         <% end %>
       </div>
     </div>
   </div>
@@ -71,5 +92,7 @@
 </div>
 </div>
 </div>
+</body>
+</html>
 
 

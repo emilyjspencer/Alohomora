@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     background-color: black;
+     font-family: Dancing Script;
+     font-size: 18px;
+ }
+
+ h3 {
+     color: white;
+     font-family: Dancing Script;
+     font-size: 40px;
+     text-align: center;
+ }
+
+ .ui grey submit button {
+     font-family: Dancing Script;
+ }
+
+ .ui feed {
+     font-family: Dancing Script;
+ }
