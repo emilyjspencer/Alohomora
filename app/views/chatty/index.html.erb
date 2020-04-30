@@ -12,9 +12,6 @@
 <i class="fa fa-hat-wizard"></i>
 <h2 class="ui header">
   <img class="ui image" src="/images/icons/school.png">
-  <div class="content">
-    Learn More
-  </div>
 </h2>
 <div class="ui segment">
 <img class="ui small image" src="/images/keyhogwarts.png">
@@ -32,44 +29,18 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
     <div class="ui feed">
-       <% @messages.each do |message| %>
-        <div class="event">
-          <div class="content">
-            <div class="summary">
-              <%= message.user.username %></em>: <%= message.description %>
-            </div>  
-            <div class="event">
-             <div class="content">
-              <div class="summary">  
-      </div>
+    <%= render @messages %>
     </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <% end %>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 <div class="extra content">
-<form class="ui reply form">
+<%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f| %>
 <div class="field">
 <div class="ui fluid icon input">
-
-  <input type="text" placeholder="Enter a message..">
-<i class="bordered inverted grey edit icon"></i>
+<%= f.text_field :description %>
+<%= f.button '<i class="bordered inverted grey edit icon"></i>'.html_safe %>
 </div>
 </div>
-
-</form>
+<% end %>
 </div>
 </div>
 </div>
@@ -88,6 +59,7 @@
   <a class="item">
     Friends
   </a>
+</div>
 </div>
 </div>
 </div>

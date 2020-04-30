@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   post 'login', to: 'sessions#create'
 
+  post 'message', to: 'messages#create'
+
   get 'logout', to: 'sessions#destroy'
 end
